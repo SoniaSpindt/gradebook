@@ -1,0 +1,30 @@
+{% extends "gradebook/base.html" %}
+{% block content %}
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3">
+				<h4>Student</h4>
+			</div>
+			<div class="col-sm-3">
+				<h4>Current Grade</h4>
+			</div>
+			<div class="col-sm-6">
+				<h4 class="text-center">Assignments</h4>
+			</div>
+		</div>
+		<hr>
+        <div class="row">
+            <div class="col-sm-3">
+            	{% for student in students %}
+                    <h6 class="panel-title">{{ student.last_name }}, {{ student.first_name }}</h6><hr>
+            	{% endfor%}
+                </div>
+            <div class="col-sm-3">
+            	{% for student in students %}
+            		<h4 class="panel-title">{{ student.id }}</h4><hr>
+            	{% endfor%}
+            </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

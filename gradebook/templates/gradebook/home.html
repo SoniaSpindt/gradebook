@@ -1,0 +1,28 @@
+{% extends "gradebook/base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+        <div class="row">
+          {% for course in courses %}
+            <div class="col-xs-4">
+                <a href="{% url 'student-list' course.id %}">
+                <div class="panel panel-default" id="space">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">{{ course.section }}</h4>
+                    </div>
+                    <div class="panel-body">
+                      <h4>{{ course.title }}</h4>
+                        <ul>
+                            <li>Class Average: HOW DO AVERAGE?</li>
+                            <li>Students: HOW DO YOU SUM TOGETHER?</li>
+                        </ul>
+                    </div>
+                </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock content %}
